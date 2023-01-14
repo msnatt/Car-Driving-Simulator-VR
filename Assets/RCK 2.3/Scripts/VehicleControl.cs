@@ -9,6 +9,12 @@ public enum ControlMode { simple = 1, touch = 2 }
 public class VehicleControl : MonoBehaviour
 {
 
+    public float steerFloat;
+    public float accelFloat;
+    public bool brakeBool;
+    public bool shiftBool;
+    public Text debugText;
+
 
     public ControlMode controlMode = ControlMode.simple;
 
@@ -457,6 +463,19 @@ public class VehicleControl : MonoBehaviour
             }
         }
 
+        if(!NeutralGear)
+        {
+            debugText.text = currentGear.ToString();
+        }
+        else if (NeutralGear)
+        {
+            debugText.text = "N";
+        }
+        if(!NeutralGear && currentGear == 0)
+        {
+            debugText.text = "R";
+        }
+
     }
 
 
@@ -504,10 +523,10 @@ public class VehicleControl : MonoBehaviour
 
                 if (carWheels.wheels.frontWheelDrive || carWheels.wheels.backWheelDrive)
                 {
-                    steer = Mathf.MoveTowards(steer, Input.GetAxis("Horizontal"), 0.2f);
-                    accel = Input.GetAxis("Vertical");
-                    brake = Input.GetButton("Jump");
-                    shift = Input.GetKey(KeyCode.LeftShift) | Input.GetKey(KeyCode.RightShift);
+                    steer = Mathf.MoveTowards(steer, steerFloat, 0.2f);
+                    accel = accelFloat;//Input.GetAxis("Vertical");
+                    brake = brakeBool;//Input.GetButton("Jump");
+                    shift = shiftBool;//Input.GetKey(KeyCode.LeftShift) | Input.GetKey(KeyCode.RightShift);
 
 
                 }
