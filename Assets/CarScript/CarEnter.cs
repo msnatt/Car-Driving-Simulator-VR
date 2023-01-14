@@ -67,9 +67,5 @@ public class CarEnter : MonoBehaviour
         {
             EnterCar();
         }
-        else 
-        {
-            
-        }
     }
 }
