@@ -16,7 +16,7 @@ public class CarEnter : MonoBehaviour
     Quaternion seatRotation; // rotation of player once in the car
     Vector3 seatPosition; //  position of player in the car
 
-    public float carPlayerHeight = -0.35f;
+    public float carPlayerHeight = -0.75f;
 
     
 
