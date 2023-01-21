@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/BNG Framework/Scenes/Vehicle Example.unity
     guid: d96233ee44d985d4fb8dc23a907c06eb
   - enabled: 1
-    path: Assets/Scenes/CarScene.unity
+    path: Assets/Scenes/MainScene.unity
     guid: d41b5c99988e93d4493482bcc5610e10
   - enabled: 1
     path: Assets/Scenes/Level02.unity
