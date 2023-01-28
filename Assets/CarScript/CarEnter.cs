@@ -57,6 +57,8 @@ public class CarEnter : MonoBehaviour
 
         carDestination.GetComponent<CarExit>().intheCar = true;
 
+        vehicle.GetComponent<VehicleControl>().activeControl = true;
+
         enterCube.SetActive(false); //  disable the enter cube
 
     }
