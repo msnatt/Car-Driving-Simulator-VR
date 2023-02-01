@@ -813,113 +813,113 @@ public class VehicleControl : MonoBehaviour
             Vector3 lp = w.wheel.localPosition;
 
 
-            if (col.GetGroundHit(out hit))
-            {
+            // if (col.GetGroundHit(out hit))
+            // {
 
 
-                if (carParticles.brakeParticlePerfab)
-                {
-                    if (Particle[currentWheel] == null)
-                    {
-                        Particle[currentWheel] = Instantiate(carParticles.brakeParticlePerfab, w.wheel.position, Quaternion.identity) as GameObject;
-                        Particle[currentWheel].name = "WheelParticle";
-                        Particle[currentWheel].transform.parent = transform;
-                        Particle[currentWheel].AddComponent<AudioSource>();
-                        Particle[currentWheel].GetComponent<AudioSource>().maxDistance = 50;
-                        Particle[currentWheel].GetComponent<AudioSource>().spatialBlend = 1;
-                        Particle[currentWheel].GetComponent<AudioSource>().dopplerLevel = 5;
-                        Particle[currentWheel].GetComponent<AudioSource>().rolloffMode = AudioRolloffMode.Custom;
-                    }
+            //     if (carParticles.brakeParticlePerfab)
+            //     {
+            //         if (Particle[currentWheel] == null)
+            //         {
+            //             Particle[currentWheel] = Instantiate(carParticles.brakeParticlePerfab, w.wheel.position, Quaternion.identity) as GameObject;
+            //             Particle[currentWheel].name = "WheelParticle";
+            //             Particle[currentWheel].transform.parent = transform;
+            //             Particle[currentWheel].AddComponent<AudioSource>();
+            //             Particle[currentWheel].GetComponent<AudioSource>().maxDistance = 50;
+            //             Particle[currentWheel].GetComponent<AudioSource>().spatialBlend = 1;
+            //             Particle[currentWheel].GetComponent<AudioSource>().dopplerLevel = 5;
+            //             Particle[currentWheel].GetComponent<AudioSource>().rolloffMode = AudioRolloffMode.Custom;
+            //         }
 
 
-                    var pc = Particle[currentWheel].GetComponent<ParticleSystem>();
-                    bool WGrounded = false;
+            //         var pc = Particle[currentWheel].GetComponent<ParticleSystem>();
+            //         bool WGrounded = false;
 
 
-                    for (int i = 0; i < carSetting.hitGround.Length; i++)
-                    {
+            //         for (int i = 0; i < carSetting.hitGround.Length; i++)
+            //         {
 
-                        if (hit.collider.CompareTag(carSetting.hitGround[i].tag))
-                        {
-                            WGrounded = carSetting.hitGround[i].grounded;
+            //             if (hit.collider.CompareTag(carSetting.hitGround[i].tag))
+            //             {
+            //                 WGrounded = carSetting.hitGround[i].grounded;
 
-                            if ((brake || Mathf.Abs(hit.sidewaysSlip) > 0.5f) && speed > 1)
-                            {
-                                Particle[currentWheel].GetComponent<AudioSource>().clip = carSetting.hitGround[i].brakeSound;
-                            }
-                            else if (Particle[currentWheel].GetComponent<AudioSource>().clip != carSetting.hitGround[i].groundSound && !Particle[currentWheel].GetComponent<AudioSource>().isPlaying)
-                            {
+            //                 if ((brake || Mathf.Abs(hit.sidewaysSlip) > 0.5f) && speed > 1)
+            //                 {
+            //                     Particle[currentWheel].GetComponent<AudioSource>().clip = carSetting.hitGround[i].brakeSound;
+            //                 }
+            //                 else if (Particle[currentWheel].GetComponent<AudioSource>().clip != carSetting.hitGround[i].groundSound && !Particle[currentWheel].GetComponent<AudioSource>().isPlaying)
+            //                 {
 
-                                Particle[currentWheel].GetComponent<AudioSource>().clip = carSetting.hitGround[i].groundSound;
-                            }
+            //                     Particle[currentWheel].GetComponent<AudioSource>().clip = carSetting.hitGround[i].groundSound;
+            //                 }
 
-                            Particle[currentWheel].GetComponent<ParticleSystem>().startColor = carSetting.hitGround[i].brakeColor;
+            //                 Particle[currentWheel].GetComponent<ParticleSystem>().startColor = carSetting.hitGround[i].brakeColor;
 
-                        }
-
-
-                    }
+            //             }
 
 
-
-
-                    if (WGrounded && speed > 5 && !brake)
-                    {
-
-                        pc.enableEmission = true;
-
-                        Particle[currentWheel].GetComponent<AudioSource>().volume = 0.5f;
-
-                        if (!Particle[currentWheel].GetComponent<AudioSource>().isPlaying)
-                            Particle[currentWheel].GetComponent<AudioSource>().Play();
-
-                    }
-                    else if ((brake || Mathf.Abs(hit.sidewaysSlip) > 0.6f) && speed > 1)
-                    {
-
-                        if ((accel < 0.0f) || ((brake || Mathf.Abs(hit.sidewaysSlip) > 0.6f) && (w == wheels[2] || w == wheels[3])))
-                        {
-
-                            if (!Particle[currentWheel].GetComponent<AudioSource>().isPlaying)
-                                Particle[currentWheel].GetComponent<AudioSource>().Play();
-                            pc.enableEmission = true;
-                            Particle[currentWheel].GetComponent<AudioSource>().volume = 10;
-
-                        }
-
-                    }
-                    else
-                    {
-
-                        pc.enableEmission = false;
-                        Particle[currentWheel].GetComponent<AudioSource>().volume = Mathf.Lerp(Particle[currentWheel].GetComponent<AudioSource>().volume, 0, Time.deltaTime * 10.0f);
-                    }
-
-                }
-
-
-                lp.y -= Vector3.Dot(w.wheel.position - hit.point, transform.TransformDirection(0, 1, 0) / transform.lossyScale.x) - (col.radius);
-                lp.y = Mathf.Clamp(lp.y, -10.0f, w.pos_y);
-                floorContact = floorContact || (w.drive);
-
-
-            }
-            else
-            {
-
-                if (Particle[currentWheel] != null)
-                {
-                    var pc = Particle[currentWheel].GetComponent<ParticleSystem>();
-                    pc.enableEmission = false;
-                }
+            //         }
 
 
 
-                lp.y = w.startPos.y - carWheels.setting.Distance;
 
-                myRigidbody.AddForce(Vector3.down * 5000);
+            //         if (WGrounded && speed > 5 && !brake)
+            //         {
 
-            }
+            //             pc.enableEmission = true;
+
+            //             Particle[currentWheel].GetComponent<AudioSource>().volume = 0.5f;
+
+            //             if (!Particle[currentWheel].GetComponent<AudioSource>().isPlaying)
+            //                 Particle[currentWheel].GetComponent<AudioSource>().Play();
+
+            //         }
+            //         else if ((brake || Mathf.Abs(hit.sidewaysSlip) > 0.6f) && speed > 1)
+            //         {
+
+            //             if ((accel < 0.0f) || ((brake || Mathf.Abs(hit.sidewaysSlip) > 0.6f) && (w == wheels[2] || w == wheels[3])))
+            //             {
+
+            //                 if (!Particle[currentWheel].GetComponent<AudioSource>().isPlaying)
+            //                     Particle[currentWheel].GetComponent<AudioSource>().Play();
+            //                 pc.enableEmission = true;
+            //                 Particle[currentWheel].GetComponent<AudioSource>().volume = 10;
+
+            //             }
+
+            //         }
+            //         else
+            //         {
+
+            //             pc.enableEmission = false;
+            //             Particle[currentWheel].GetComponent<AudioSource>().volume = Mathf.Lerp(Particle[currentWheel].GetComponent<AudioSource>().volume, 0, Time.deltaTime * 10.0f);
+            //         }
+
+            //     }
+
+
+            //     lp.y -= Vector3.Dot(w.wheel.position - hit.point, transform.TransformDirection(0, 1, 0) / transform.lossyScale.x) - (col.radius);
+            //     lp.y = Mathf.Clamp(lp.y, -10.0f, w.pos_y);
+            //     floorContact = floorContact || (w.drive);
+
+
+            // }
+            // else
+            // {
+
+            //     if (Particle[currentWheel] != null)
+            //     {
+            //         var pc = Particle[currentWheel].GetComponent<ParticleSystem>();
+            //         pc.enableEmission = false;
+            //     }
+
+
+
+            //     lp.y = w.startPos.y - carWheels.setting.Distance;
+
+            //     myRigidbody.AddForce(Vector3.down * 5000);
+
+            // }
 
             currentWheel++;
             w.wheel.localPosition = lp;

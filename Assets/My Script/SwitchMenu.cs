@@ -20,7 +20,11 @@ public class SwitchMenu : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKey("escape"))
+        {
+            Debug.Log("Quit escape");
+            Application.Quit();
+        }
     }
 
     public void selectlevel()
@@ -34,12 +38,19 @@ public class SwitchMenu : MonoBehaviour
 
     }
 
-
-
     public void Back()
     {
         //index = 0;
         BackgroundStart.gameObject.SetActive(true);
         BackgroundSelect.gameObject.SetActive(false);
+    }
+
+    public void ExitGame()
+    {
+        if (true)
+        {   
+            Debug.Log("Quit button");
+            Application.Quit();
+        }
     }
 }

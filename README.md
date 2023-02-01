@@ -1,4 +1,4 @@
->> Completed
+> Completed
 
     - Grab Streering
         
@@ -21,7 +21,7 @@
         - Level 04 (50%)
 
 
->> Task
+> Task
 
     - 5 Model Car
 
