@@ -8,6 +8,8 @@
 
     - Switch Scene
 
+    - Advance Car controller
+
     - Smooth Switch Scene
 
     - UI
@@ -18,7 +20,7 @@
         - Level 01
         - Level 02
         - Level 03
-        - Level 04 (50%)
+        - Level 04 (40%)
 
 
 > Task
