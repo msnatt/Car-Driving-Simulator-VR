@@ -9,6 +9,7 @@ public class CheckCompleted : Singleton<CheckCompleted>
     [HideInInspector] public bool iscompleted;
     [HideInInspector] public bool GOUIcanActive;
 
+
     void Update()
     {
         Debug.Log($"      Font {checkdetectF}     ||     Back {checkdetectB}");
@@ -18,9 +19,7 @@ public class CheckCompleted : Singleton<CheckCompleted>
             iscompleted = true;
             StartCoroutine(WaitCheck());
         }
-        
     }
-
     private IEnumerator WaitCheck()
     {
         yield return new WaitForSeconds(5f);

@@ -10,6 +10,7 @@ public class CompletedLevel : MonoBehaviour
     void Start()
     {
         currentlevel = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("Start GetActiveScene");
     }
     
     public void nextlevel()

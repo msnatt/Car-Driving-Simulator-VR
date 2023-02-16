@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
 
 public enum ControlMode { simple = 1, touch = 2 }
 
@@ -13,7 +14,7 @@ public class VehicleControl : MonoBehaviour
     public float accelFloat;
     public bool brakeBool;
     public bool shiftBool;
-    public Text debugText;
+    public TMP_Text debugText;
 
 
     public ControlMode controlMode = ControlMode.simple;

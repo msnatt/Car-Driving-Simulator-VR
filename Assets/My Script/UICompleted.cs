@@ -28,6 +28,10 @@ public class UICompleted : MonoBehaviour
         rectTransfrom = CheckpointUI.GetComponent<RectTransform>();
         
         TimeText.fontSize = 100;
+
+        isUIcompletedActive = false;
+
+        checkCompleted.GOUIcanActive = false;
         
     }
     void Update()
@@ -52,11 +56,11 @@ public class UICompleted : MonoBehaviour
         }
         else if (TimeText.fontSize > 50 && isUIcompletedActive && CountTimeinCompleted > 100)
         {
-            TimeText.text = Math.Round(UnityEngine.Random.Range(0f,10f),1).ToString();
+            TimeText.text = Math.Round(UnityEngine.Random.Range(0f,10f),0).ToString();
         }
         else if (TimeText.fontSize > 50 && isUIcompletedActive && CountTimeinCompleted <= 100)
         {
-            TimeText.text = Math.Round(UITimerCanvas.GetComponent<Timer>().CurrentTime,1).ToString();
+            TimeText.text = Math.Round(UITimerCanvas.GetComponent<Timer>().CurrentTime,2).ToString();
         }
 
         if (rectTransfrom.localPosition.y < 1.40f)

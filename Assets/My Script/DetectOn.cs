@@ -9,7 +9,9 @@ public class DetectOn : MonoBehaviour
     {
         checkcompleted = CheckCompleted.Instance;
         Debug.Log("================ Detect On ==================");
-
+        checkcompleted.iscompleted = false;
+        checkcompleted.checkdetectF = false;
+        checkcompleted.checkdetectB = false;
     }
 
     private void OnTriggerEnter(Collider other)
