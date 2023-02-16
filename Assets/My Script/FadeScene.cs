@@ -25,13 +25,7 @@ public class FadeScene : MonoBehaviour
     }
     public void FadeOut()
     {
-        fadeScene.SetActive(true);
-        Debug.Log("Wait 2 second FadeOut");
         Fade(0, 1);
-        
-        new WaitForSeconds(fadeDuration);
-        Debug.Log("Wait Completed");
-        fadeScene.SetActive(false);
     }
 
 

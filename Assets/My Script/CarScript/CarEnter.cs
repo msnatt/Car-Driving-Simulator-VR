@@ -44,16 +44,18 @@ public class CarEnter : MonoBehaviour
         playerController.GetComponent<PlayerRotation>().enabled = false; //  disable player rotation
 
         //disable hand collision or suffer beating the car around while you are in it
-        rightHandModel.GetComponent<HandCollision>().EnableCollisionOnPoint = false;
-        rightHandModel.GetComponent<HandCollision>().EnableCollisionOnFist = false;
-        leftHandModel.GetComponent<HandCollision>().EnableCollisionOnPoint = false;
-        leftHandModel.GetComponent<HandCollision>().EnableCollisionOnFist = false;
+        // rightHandModel.GetComponent<HandCollision>().EnableCollisionOnPoint = false;
+        // rightHandModel.GetComponent<HandCollision>().EnableCollisionOnFist = false;
+        // leftHandModel.GetComponent<HandCollision>().EnableCollisionOnPoint = false;
+        // leftHandModel.GetComponent<HandCollision>().EnableCollisionOnFist = false;
 
         playerController.transform.parent = vehicle.transform; //set player contoller parent from XRrig to the vehicle
 
        // vehicle.GetComponentInChildren<CarExit>().intheCar = true; // set bool on CarExit script to true
 
         vehicle.GetComponent<VehicleControl>().activeControl = true;
+
+        //vehicle.GetComponent<VehicleControl>().activeControl.ToString();
 
         carDestination.GetComponent<CarExit>().intheCar = true;
 

@@ -15,6 +15,11 @@ namespace BNG {
         void Start() {
             VRUISystem.Instance.AddCanvas(GetComponent<Canvas>());
         }
+
+        public void StartUI(){
+            
+        }
+
     }
 }
 

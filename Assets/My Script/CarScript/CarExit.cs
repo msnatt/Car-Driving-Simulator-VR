@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BNG;
+using UnityEngine.InputSystem;
 
 public class CarExit : MonoBehaviour
 {
@@ -33,8 +34,8 @@ public class CarExit : MonoBehaviour
 
     void Update()
     {
-
-        if (playerController.transform.position.y < -75f && intheCar == true || intheCar == true && InputBridge.Instance.XButtonDown)
+        
+        /*if (playerController.transform.position.y < -75f && intheCar == true )
         {
             playerController.transform.parent = xrRig.transform;
 
@@ -68,7 +69,50 @@ public class CarExit : MonoBehaviour
             enterCube.SetActive(true); //enable the enter cube 
 
             intheCar = false;
-        }
+        }*/
 
+    }
+
+    public void X_ButtonPressed(InputAction.CallbackContext context)
+    {
+        Debug.Log("Pressed X Button");
+
+        if(context.performed)
+        {
+            Debug.Log("In IF Pressed X Button");
+            playerController.transform.parent = xrRig.transform;
+
+            playerController.transform.position = ExitDestination.transform.position; //transport player out of the car
+
+            playerController.GetComponent<PlayerGravity>().enabled = true; //enable gravity
+
+            playerController.GetComponent<CharacterController>().enabled = true;
+
+            playerController.GetComponent<BNGPlayerController>().CharacterControllerYOffset = playerHeightExit;
+
+            playerController.GetComponent<PlayerTeleport>().enabled = true;
+
+            playerController.GetComponent<LocomotionManager>().enabled = true;
+
+            playerController.GetComponent<SmoothLocomotion>().enabled = true;
+
+            playerController.GetComponent<PlayerRotation>().enabled = true;
+
+            // //reenable hand collision so you can punch things again
+            // rightHandModel.GetComponent<HandCollision>().EnableCollisionOnPoint = true;
+            // rightHandModel.GetComponent<HandCollision>().EnableCollisionOnFist = true;
+            // leftHandModel.GetComponent<HandCollision>().EnableCollisionOnPoint = true;
+            // leftHandModel.GetComponent<HandCollision>().EnableCollisionOnFist = true;
+
+            trackingSpace.transform.localRotation = initialRotation; // reset tracking space rotation
+            trackingSpace.transform.localPosition = initialPosition; // reset tracking space position
+
+            vehicle.GetComponent<VehicleControl>().activeControl = false; // disable car
+
+            enterCube.SetActive(true); //enable the enter cube 
+
+            intheCar = false;
+        }
+            
     }
 }

@@ -12,7 +12,10 @@ namespace BNG {
 
         public InputActionReference InputAction = default;
         public GameObject ToggleObject = default;
-
+        [SerializeField] GameObject UITimerGameObject;
+        Timer timer;
+        private bool ActiveTime = false;
+        public GameObject vehicle;
         private void OnEnable() {
             InputAction.action.performed += ToggleActive;
         }
@@ -24,7 +27,18 @@ namespace BNG {
         public void ToggleActive(InputAction.CallbackContext context) {
             if(ToggleObject) {
                 ToggleObject.SetActive(!ToggleObject.activeSelf);
+                if (UITimerGameObject.GetComponent<Timer>().TimeActive)
+                {
+                    UITimerGameObject.GetComponent<Timer>().TimeActive = false ;
+                    vehicle.GetComponent<VehicleControl>().activeControl = false;
+
+                }else if(!UITimerGameObject.GetComponent<Timer>().TimeActive)
+                {
+                    UITimerGameObject.GetComponent<Timer>().TimeActive = true;
+                    vehicle.GetComponent<VehicleControl>().activeControl = true;
+                }
             }
+            
         }
     }
 }
