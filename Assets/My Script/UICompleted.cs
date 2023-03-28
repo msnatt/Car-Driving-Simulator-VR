@@ -45,7 +45,7 @@ public class UICompleted : MonoBehaviour
             CompletedUI.SetActive(true);
             UITimerCanvas.GetComponent<Timer>().TimeActive = false;
             vehicle.GetComponent<VehicleControl>().activeControl = false;
-            CountTimeinCompleted = 500;
+            CountTimeinCompleted = 300;
         }
         
 
