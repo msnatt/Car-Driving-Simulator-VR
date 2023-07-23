@@ -12,7 +12,6 @@ public class CheckCompleted : Singleton<CheckCompleted>
 
     void Update()
     {
-        Debug.Log($"      Font {checkdetectF}     ||     Back {checkdetectB}");
 
         if (checkdetectF && checkdetectB && !iscompleted)
         {
@@ -34,18 +33,4 @@ public class CheckCompleted : Singleton<CheckCompleted>
             
         } 
     }
-
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.tag == "DetectF")
-    //     {
-    //         checkdetectF = true;
-    //         Debug.Log($"Font = {checkdetectF}");
-    //     }
-    //     if( other.tag == "DetectB")
-    //     {
-    //         checkdetectB = true;
-    //         Debug.Log($"Back = {checkdetectB}");
-    //     }
-    // }
 }

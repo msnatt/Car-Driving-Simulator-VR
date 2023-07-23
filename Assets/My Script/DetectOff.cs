@@ -8,7 +8,6 @@ public class DetectOff : MonoBehaviour
     void Start()
     {
         checkcompleted = CheckCompleted.Instance;
-        Debug.Log("================ Detect Off ==================");
     }
 
     private void OnTriggerEnter(Collider other)

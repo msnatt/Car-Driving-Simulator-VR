@@ -45,7 +45,7 @@ public class UICompleted : MonoBehaviour
             CompletedUI.SetActive(true);
             UITimerCanvas.GetComponent<Timer>().TimeActive = false;
             vehicle.GetComponent<VehicleControl>().activeControl = false;
-            CountTimeinCompleted = 300;
+            CountTimeinCompleted = 150;
         }
         
 
@@ -60,7 +60,7 @@ public class UICompleted : MonoBehaviour
         }
         else if (TimeText.fontSize > 50 && isUIcompletedActive && CountTimeinCompleted <= 100)
         {
-            TimeText.text = Math.Round(UITimerCanvas.GetComponent<Timer>().CurrentTime,2).ToString();
+            TimeText.text = Math.Round(UITimerCanvas.GetComponent<Timer>().CurrentTime,1).ToString();
         }
 
         if (rectTransfrom.localPosition.y < 1.40f)
