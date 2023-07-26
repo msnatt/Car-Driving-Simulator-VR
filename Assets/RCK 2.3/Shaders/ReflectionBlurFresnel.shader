@@ -98,58 +98,58 @@ Shader "Elementals/Reflection Blur Fresnel"
 				refl += texCUBE (CubeTex, refVector + float3(3*_BlurRange,0,0))*0.09;
 				refl += texCUBE (CubeTex, refVector + float3(4*_BlurRange,0,0))*0.05;
 	
-//				refl += texCUBE (CubeTex, refVector -float3(0,4*_BlurRange,0))*0.05;
-//				refl += texCUBE (CubeTex, refVector -float3(0,3*_BlurRange,0))*0.09;
-//				refl += texCUBE (CubeTex, refVector -float3(0,2*_BlurRange,0))*0.12;
-//				refl += texCUBE (CubeTex, refVector -float3(0,1*_BlurRange,0))*0.15;
-//				refl += texCUBE (CubeTex, refVector ) * 0.16;
-//				refl += texCUBE (CubeTex, refVector +float3(0,1*_BlurRange,0))*0.15;
-//				refl += texCUBE (CubeTex, refVector +float3(0,2*_BlurRange,0))*0.12;
-//				refl += texCUBE (CubeTex, refVector +float3(0,3*_BlurRange,0))*0.09;
-//				refl += texCUBE (CubeTex, refVector +float3(0,4*_BlurRange,0))*0.05;
-//	
-//				refl += texCUBE (CubeTex, refVector - float3(0,0,4*_BlurRange))*0.05;
-//				refl += texCUBE (CubeTex, refVector - float3(0,0,3*_BlurRange))*0.09;
-//				refl += texCUBE (CubeTex, refVector - float3(0,0,2*_BlurRange))*0.12;
-//				refl += texCUBE (CubeTex, refVector - float3(0,0,1*_BlurRange))*0.15;
-//				refl += texCUBE (CubeTex, refVector ) * 0.16;
-//				refl += texCUBE (CubeTex, refVector + float3(0,0,1*_BlurRange))*0.15;
-//				refl += texCUBE (CubeTex, refVector + float3(0,0,2*_BlurRange))*0.12;
-//				refl += texCUBE (CubeTex, refVector + float3(0,0,3*_BlurRange))*0.09;
-//				refl += texCUBE (CubeTex, refVector + float3(0,0,4*_BlurRange))*0.05;
+				refl += texCUBE (CubeTex, refVector -float3(0,4*_BlurRange,0))*0.05;
+				refl += texCUBE (CubeTex, refVector -float3(0,3*_BlurRange,0))*0.09;
+				refl += texCUBE (CubeTex, refVector -float3(0,2*_BlurRange,0))*0.12;
+				refl += texCUBE (CubeTex, refVector -float3(0,1*_BlurRange,0))*0.15;
+				refl += texCUBE (CubeTex, refVector ) * 0.16;
+				refl += texCUBE (CubeTex, refVector +float3(0,1*_BlurRange,0))*0.15;
+				refl += texCUBE (CubeTex, refVector +float3(0,2*_BlurRange,0))*0.12;
+				refl += texCUBE (CubeTex, refVector +float3(0,3*_BlurRange,0))*0.09;
+				refl += texCUBE (CubeTex, refVector +float3(0,4*_BlurRange,0))*0.05;
 	
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(4*_BlurRange,0,0), _Blur))*0.05;
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(3*_BlurRange,0,0), _Blur))*0.09;
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(2*_BlurRange,0,0), _Blur))*0.12;
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(1*_BlurRange,0,0), _Blur))*0.15;
-//				refl += texCUBElod (CubeTex, float4(refVector , _Blur)) * 0.16;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(1*_BlurRange,0,0), _Blur))*0.15;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(2*_BlurRange,0,0), _Blur))*0.12;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(3*_BlurRange,0,0), _Blur))*0.09;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(4*_BlurRange,0,0), _Blur))*0.05;
-//	
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(0,4*_BlurRange,0), _Blur))*0.05;
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(0,3*_BlurRange,0), _Blur))*0.09;
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(0,2*_BlurRange,0), _Blur))*0.12;
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(0,1*_BlurRange,0), _Blur))*0.15;
-//				refl += texCUBElod (CubeTex, float4(refVector , _Blur)) * 0.16;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(0,1*_BlurRange,0), _Blur))*0.15;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(0,2*_BlurRange,0), _Blur))*0.12;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(0,3*_BlurRange,0), _Blur))*0.09;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(0,4*_BlurRange,0), _Blur))*0.05;
-//	
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(0,0,4*_BlurRange), _Blur))*0.05;
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(0,0,3*_BlurRange), _Blur))*0.09;
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(0,0,2*_BlurRange), _Blur))*0.12;
-//				refl += texCUBElod (CubeTex, float4(refVector - float3(0,0,1*_BlurRange), _Blur))*0.15;
-//				refl += texCUBElod (CubeTex, float4(refVector , _Blur)) * 0.16;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(0,0,1*_BlurRange), _Blur))*0.15;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(0,0,2*_BlurRange), _Blur))*0.12;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(0,0,3*_BlurRange), _Blur))*0.09;
-//				refl += texCUBElod (CubeTex, float4(refVector + float3(0,0,4*_BlurRange), _Blur))*0.05;
+				refl += texCUBE (CubeTex, refVector - float3(0,0,4*_BlurRange))*0.05;
+				refl += texCUBE (CubeTex, refVector - float3(0,0,3*_BlurRange))*0.09;
+				refl += texCUBE (CubeTex, refVector - float3(0,0,2*_BlurRange))*0.12;
+				refl += texCUBE (CubeTex, refVector - float3(0,0,1*_BlurRange))*0.15;
+				refl += texCUBE (CubeTex, refVector ) * 0.16;
+				refl += texCUBE (CubeTex, refVector + float3(0,0,1*_BlurRange))*0.15;
+				refl += texCUBE (CubeTex, refVector + float3(0,0,2*_BlurRange))*0.12;
+				refl += texCUBE (CubeTex, refVector + float3(0,0,3*_BlurRange))*0.09;
+				refl += texCUBE (CubeTex, refVector + float3(0,0,4*_BlurRange))*0.05;
+	
+				refl += texCUBElod (CubeTex, float4(refVector - float3(4*_BlurRange,0,0), _Blur))*0.05;
+				refl += texCUBElod (CubeTex, float4(refVector - float3(3*_BlurRange,0,0), _Blur))*0.09;
+				refl += texCUBElod (CubeTex, float4(refVector - float3(2*_BlurRange,0,0), _Blur))*0.12;
+				refl += texCUBElod (CubeTex, float4(refVector - float3(1*_BlurRange,0,0), _Blur))*0.15;
+				refl += texCUBElod (CubeTex, float4(refVector , _Blur)) * 0.16;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(1*_BlurRange,0,0), _Blur))*0.15;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(2*_BlurRange,0,0), _Blur))*0.12;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(3*_BlurRange,0,0), _Blur))*0.09;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(4*_BlurRange,0,0), _Blur))*0.05;
+	
+				refl += texCUBElod (CubeTex, float4(refVector - float3(0,4*_BlurRange,0), _Blur))*0.05;
+				refl += texCUBElod (CubeTex, float4(refVector - float3(0,3*_BlurRange,0), _Blur))*0.09;
+				refl += texCUBElod (CubeTex, float4(refVector - float3(0,2*_BlurRange,0), _Blur))*0.12;
+				refl += texCUBElod (CubeTex, float4(refVector - float3(0,1*_BlurRange,0), _Blur))*0.15;
+				refl += texCUBElod (CubeTex, float4(refVector , _Blur)) * 0.16;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(0,1*_BlurRange,0), _Blur))*0.15;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(0,2*_BlurRange,0), _Blur))*0.12;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(0,3*_BlurRange,0), _Blur))*0.09;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(0,4*_BlurRange,0), _Blur))*0.05;
+	
+				refl += texCUBElod (CubeTex, float4(refVector - float3(0,0,4*_BlurRange), _Blur))*0.05;
+				refl += texCUBElod (CubeTex, float4(refVector - float3(0,0,3*_BlurRange), _Blur))*0.09;
+				refl += texCUBElod (CubeTex, float4(refVector - float3(0,0,2*_BlurRange), _Blur))*0.12;
+				refl += texCUBElod (CubeTex, float4(refVector - float3(0,0,1*_BlurRange), _Blur))*0.15;
+				refl += texCUBElod (CubeTex, float4(refVector , _Blur)) * 0.16;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(0,0,1*_BlurRange), _Blur))*0.15;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(0,0,2*_BlurRange), _Blur))*0.12;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(0,0,3*_BlurRange), _Blur))*0.09;
+				refl += texCUBElod (CubeTex, float4(refVector + float3(0,0,4*_BlurRange), _Blur))*0.05;
 			 
-				//return refl/3 ;//* _ReflPower;
-				//refl = texCUBE (CubeTex, refVector);
+				// return refl/3 ;//* _ReflPower;
+				refl = texCUBE (CubeTex, refVector);
 				return refl ;//* _ReflPower;
 		}
 		

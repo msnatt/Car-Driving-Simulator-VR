@@ -7,14 +7,13 @@ public class SwitchMenu : MonoBehaviour
 {
     public GameObject BackgroundStart;
     public GameObject BackgroundSelect;
-    //public GameObject Backgroundxxx;
-
-    public int index;
+    public GameObject BackgroundSetting;
     void Start()
     {
         //index = 0;
         BackgroundStart.gameObject.SetActive(true);
         BackgroundSelect.gameObject.SetActive(false);
+        BackgroundSetting.gameObject.SetActive(false);
         Debug.Log("Update Menu");
     }
 
@@ -29,20 +28,22 @@ public class SwitchMenu : MonoBehaviour
 
     public void selectlevel()
     {
-        //index = 1;
-        //if(index == 1)
-        //{
         BackgroundStart.gameObject.SetActive(false);
         BackgroundSelect.gameObject.SetActive(true);
-        //}
-
+        BackgroundSetting.gameObject.SetActive(false);
     }
 
     public void Back()
     {
-        //index = 0;
         BackgroundStart.gameObject.SetActive(true);
         BackgroundSelect.gameObject.SetActive(false);
+        BackgroundSetting.gameObject.SetActive(false);
+    }
+    public void SettingGame()
+    {
+        BackgroundStart.gameObject.SetActive(false);
+        BackgroundSelect.gameObject.SetActive(false);
+        BackgroundSetting.gameObject.SetActive(true);
     }
 
     public void ExitGame()
