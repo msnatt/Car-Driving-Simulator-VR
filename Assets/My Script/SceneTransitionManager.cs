@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class SceneTransitionManager : MonoBehaviour
 {   
     public FadeScene fadeScene;
+    public int nextSceneLoad;
+    void Start()
+    {
+        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+    }
     public void GoToScene(int sceneIndex)
     {
         StartCoroutine(GoToSceneRoutine(sceneIndex));
@@ -18,5 +23,9 @@ public class SceneTransitionManager : MonoBehaviour
 
         // Launch The New Scene
         SceneManager.LoadScene(sceneIndex);
+        if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
+        {
+            PlayerPrefs.SetInt("levelAt", nextSceneLoad);
+        }
     }
 }

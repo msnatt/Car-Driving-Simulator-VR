@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SwitchMenu : MonoBehaviour
 {
     public GameObject BackgroundStart;
+    public GameObject BackgroundSecondStart;
     public GameObject BackgroundSelect;
     public GameObject BackgroundSetting;
     void Start()
@@ -14,6 +16,7 @@ public class SwitchMenu : MonoBehaviour
         BackgroundStart.gameObject.SetActive(true);
         BackgroundSelect.gameObject.SetActive(false);
         BackgroundSetting.gameObject.SetActive(false);
+        BackgroundSecondStart.gameObject.SetActive(false);
         Debug.Log("Update Menu");
     }
 
@@ -31,6 +34,7 @@ public class SwitchMenu : MonoBehaviour
         BackgroundStart.gameObject.SetActive(false);
         BackgroundSelect.gameObject.SetActive(true);
         BackgroundSetting.gameObject.SetActive(false);
+        BackgroundSecondStart.gameObject.SetActive(false);
     }
 
     public void Back()
@@ -38,12 +42,21 @@ public class SwitchMenu : MonoBehaviour
         BackgroundStart.gameObject.SetActive(true);
         BackgroundSelect.gameObject.SetActive(false);
         BackgroundSetting.gameObject.SetActive(false);
+        BackgroundSecondStart.gameObject.SetActive(false);
     }
     public void SettingGame()
     {
         BackgroundStart.gameObject.SetActive(false);
         BackgroundSelect.gameObject.SetActive(false);
         BackgroundSetting.gameObject.SetActive(true);
+        BackgroundSecondStart.gameObject.SetActive(false);
+    }
+    public void secondStart()
+    {
+        BackgroundStart.gameObject.SetActive(false);
+        BackgroundSelect.gameObject.SetActive(false);
+        BackgroundSetting.gameObject.SetActive(false);
+        BackgroundSecondStart.gameObject.SetActive(true);
     }
 
     public void ExitGame()
