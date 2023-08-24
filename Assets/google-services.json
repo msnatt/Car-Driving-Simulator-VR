@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "113251128741",
+    "project_id": "driving-simulator-vr",
+    "storage_bucket": "driving-simulator-vr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113251128741:android:8ef50d4341d0866ff9444c",
+        "android_client_info": {
+          "package_name": "com.msnatt.DrivingSimulatorVR"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113251128741-ljp9l4qtlpokbl6mjfcujc4th3bcpqpl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2H9q7_oZ2S4n3g-QR-lgoi96nMrEsbEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113251128741-ljp9l4qtlpokbl6mjfcujc4th3bcpqpl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
