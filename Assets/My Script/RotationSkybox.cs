@@ -6,7 +6,7 @@ public class RotationSkybox : MonoBehaviour
 {
     [SerializeField] private Material skybox;
     private float _elapsedTime = 0f;
-    private float _timescale = 2.5f;
+    [SerializeField]private float _timescale = 1.5f;
     private static readonly int Rotation = Shader.PropertyToID("_Rotation");
 
     void Update ()

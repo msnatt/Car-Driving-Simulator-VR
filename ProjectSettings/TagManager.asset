@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DetectF
   - DetectB
+  - Car
   layers:
   - Default
   - TransparentFX

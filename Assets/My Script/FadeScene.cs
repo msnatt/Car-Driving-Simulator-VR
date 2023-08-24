@@ -13,6 +13,7 @@ public class FadeScene : MonoBehaviour
     
     void Start()
     {
+        fadeScene.SetActive(true);
         rend = GetComponent<Renderer>();
         if(FadeOnStart)
             FadeIn();

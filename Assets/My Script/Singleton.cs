@@ -13,7 +13,7 @@ public class Singleton<T> : MonoBehaviour where T : Component
             {
                 GameObject gameObject = new GameObject();
                 gameObject.name = typeof(T).Name;
-                gameObject.hideFlags = HideFlags.HideAndDontSave; //* To hide from editor
+                gameObject.hideFlags = HideFlags.HideAndDontSave;
                 _instance = gameObject.AddComponent<T>();
             }
             return _instance;
