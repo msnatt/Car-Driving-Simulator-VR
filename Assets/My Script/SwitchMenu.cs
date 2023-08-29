@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SwitchMenu : MonoBehaviour
 {
@@ -10,14 +8,10 @@ public class SwitchMenu : MonoBehaviour
     public GameObject BackgroundSecondStart;
     public GameObject BackgroundSelect;
     public GameObject BackgroundSetting;
+    public GameObject BackgroundScoreboard;
     void Start()
     {
-        //index = 0;
-        BackgroundStart.gameObject.SetActive(true);
-        BackgroundSelect.gameObject.SetActive(false);
-        BackgroundSetting.gameObject.SetActive(false);
-        BackgroundSecondStart.gameObject.SetActive(false);
-        Debug.Log("Update Menu");
+        StartMenu();
     }
 
     void Update()
@@ -28,36 +22,58 @@ public class SwitchMenu : MonoBehaviour
             Application.Quit();
         }
     }
+    public void StartMenu()
+    {
+        BackgroundStart.SetActive(true);
+        BackgroundSelect.SetActive(false);
+        BackgroundSetting.SetActive(false);
+        BackgroundSecondStart.SetActive(false);
+        BackgroundScoreboard.SetActive(false);
+    }
 
     public void selectlevel()
     {
-        BackgroundStart.gameObject.SetActive(false);
-        BackgroundSelect.gameObject.SetActive(true);
-        BackgroundSetting.gameObject.SetActive(false);
-        BackgroundSecondStart.gameObject.SetActive(false);
+        BackgroundStart.SetActive(false);
+        BackgroundSelect.SetActive(true);
+        BackgroundSetting.SetActive(false);
+        BackgroundSecondStart.SetActive(false);
+        BackgroundScoreboard.SetActive(false);
     }
 
     public void Back()
     {
-        BackgroundStart.gameObject.SetActive(true);
-        BackgroundSelect.gameObject.SetActive(false);
-        BackgroundSetting.gameObject.SetActive(false);
-        BackgroundSecondStart.gameObject.SetActive(false);
+        BackgroundStart.SetActive(true);
+        BackgroundSelect.SetActive(false);
+        BackgroundSetting.SetActive(false);
+        BackgroundSecondStart.SetActive(false);
+        BackgroundScoreboard.SetActive(false);
     }
     public void SettingGame()
     {
-        BackgroundStart.gameObject.SetActive(false);
-        BackgroundSelect.gameObject.SetActive(false);
-        BackgroundSetting.gameObject.SetActive(true);
-        BackgroundSecondStart.gameObject.SetActive(false);
+        BackgroundStart.SetActive(false);
+        BackgroundSelect.SetActive(false);
+        BackgroundSetting.SetActive(true);
+        BackgroundSecondStart.SetActive(false);
+        BackgroundScoreboard.SetActive(false);
     }
     public void secondStart()
     {
-        BackgroundStart.gameObject.SetActive(false);
-        BackgroundSelect.gameObject.SetActive(false);
-        BackgroundSetting.gameObject.SetActive(false);
-        BackgroundSecondStart.gameObject.SetActive(true);
+        BackgroundStart.SetActive(false);
+        BackgroundSelect.SetActive(false);
+        BackgroundSetting.SetActive(false);
+        BackgroundSecondStart.SetActive(true);
+        BackgroundScoreboard.SetActive(false);
     }
+    public void Scoreboard()
+    {
+        
+        BackgroundStart.SetActive(false);
+        BackgroundSelect.SetActive(false);
+        BackgroundSetting.SetActive(false);
+        BackgroundSecondStart.SetActive(false);
+        BackgroundScoreboard.SetActive(true);
+    }
+    
 
     public void ExitGame()
     {

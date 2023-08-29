@@ -3,11 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Score : MonoBehaviour
+public static class Score
 {
-    public int totalscore;
-    public void showscore()
-    {
-        Debug.Log("Total Score : "+totalscore);
-    }
+    public static int totalscore;
+    
 }

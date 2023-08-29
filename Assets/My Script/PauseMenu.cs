@@ -10,10 +10,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject wristUI;
     Timer timer;
     [SerializeField] GameObject UITimerGameObject;
+    ScoreManager scoreManager;
 
     public bool activeWristUI = false;
     void Start()
     {
+        scoreManager = FindObjectOfType<ScoreManager>();
         DisplayWristUI();
         timer = UITimerGameObject.GetComponent<Timer>();
     }
@@ -46,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void RestartGame()
     {
+        scoreManager.restartscore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

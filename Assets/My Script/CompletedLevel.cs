@@ -7,15 +7,17 @@ using UnityEngine.InputSystem;
 public class CompletedLevel : MonoBehaviour
 {
     public float currentlevel;
+    ScoreManager scoremanager;
     void Start()
     {
+        scoremanager = FindObjectOfType<ScoreManager>();
         currentlevel = SceneManager.GetActiveScene().buildIndex;
         Debug.Log("Start GetActiveScene");
     }
     
     public void nextlevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex <= 4)
+        if (SceneManager.GetActiveScene().buildIndex <= 5)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -26,6 +28,7 @@ public class CompletedLevel : MonoBehaviour
     }
     public void restart()
     {
+        scoremanager.restartscore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Menu()

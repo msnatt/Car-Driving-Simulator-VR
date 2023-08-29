@@ -58,14 +58,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681190165559068}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00018655616, y: 0.0017225983, z: 0.00720858}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: 0.0033, y: -0.0278, z: 0.0072}
+  m_LocalScale: {x: 1, y: 1.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4994342152495150}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!33 &33264077409791108
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -143,7 +143,6 @@ GameObject:
   - component: {fileID: 4994342152495150}
   - component: {fileID: 33038163512055292}
   - component: {fileID: 23686140622228696}
-  - component: {fileID: 65388140836462866}
   m_Layer: 0
   m_Name: Parking_barrier
   m_TagString: Untagged
@@ -158,15 +157,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984630016570690}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.5000008, y: 0.49999925, z: 0.49999928, w: 0.5000007}
+  m_LocalPosition: {x: -1.38, y: 0, z: -0.04}
   m_LocalScale: {x: 126, y: 125.99996, z: 125.99996}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4326268573076374}
   m_Father: {fileID: 4061960552898642}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!33 &33038163512055292
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -218,16 +217,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &65388140836462866
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984630016570690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.002478077, y: 0.003484562, z: 0.008814187}
-  m_Center: {x: 0.0014254774, y: 0.0016724451, z: 0.0044070934}
