@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 4813206641914160}
   - component: {fileID: 33244346602585646}
   - component: {fileID: 23137990866090778}
-  - component: {fileID: 64343789311641464}
   m_Layer: 0
   m_Name: Building_A1
   m_TagString: Untagged
@@ -124,17 +123,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64343789311641464
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945057450944616}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: e48ed78ee18a85b4ab1b16c0f67824b5, type: 3}

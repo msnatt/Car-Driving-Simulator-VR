@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     public bool TimeActive = false;
     public float StartTime;
     public float CurrentTime;
-    protected float countTime;
+    public float countTime;
     protected float countStartTime;
     public TMP_Text textMashProUI;
     public TMP_Text textStartMashProUI;

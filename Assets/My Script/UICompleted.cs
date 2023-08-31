@@ -12,16 +12,17 @@ public class UICompleted : MonoBehaviour
     public GameObject FontPanel;
     public GameObject BackPanel;
     public TMP_Text TimeText;
+    [SerializeField] private GameObject NextButtons;
     [HideInInspector] public float CountTimeinCompleted;
     [HideInInspector] public bool isUIcompletedActive;
     [HideInInspector] public float currenttimeUI = 0;
     CheckCompleted checkCompleted;
     RectTransform rectTransfrom;
     [SerializeField] GameObject UITimerCanvas;
-    Timer timer;
     public GameObject vehicle;
     ScoreManager scoremanager;
     [SerializeField] TMP_Text scorelevelText;
+    
 
     void Start()
     {
@@ -36,6 +37,20 @@ public class UICompleted : MonoBehaviour
         checkCompleted.GOUIcanActive = false;
         
     }
+    void checkTimeinDestination()
+    {
+        if (checkCompleted.timerindestination > 0 )
+        {
+            
+            NextButtons.SetActive(true);
+            Debug.Log("Show UI Next");
+        }
+        else
+        {
+            NextButtons.SetActive(false);
+            Debug.Log("Show UI please restart");
+        }
+    }
     void Update()
     {
         //rectTransfrom = CheckpointUI.GetComponent<RectTransform>();
@@ -48,7 +63,10 @@ public class UICompleted : MonoBehaviour
             UITimerCanvas.GetComponent<Timer>().TimeActive = false;
             vehicle.GetComponent<VehicleControl>().activeControl = false;
             CountTimeinCompleted = 120;
+            checkTimeinDestination();
+            Debug.Log("Show UI");
         }
+        
         
 
         if (TimeText.fontSize > 50 && isUIcompletedActive && CountTimeinCompleted <= 0)

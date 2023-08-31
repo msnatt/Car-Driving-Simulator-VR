@@ -65,7 +65,7 @@ public class ScoreBoardManager : MonoBehaviour
     List<DataPlayer> SortArrays(List<DataPlayer> NotSort)
     {
         List<DataPlayer> newSort = new List<DataPlayer>();
-        DataPlayer scorecheck = new DataPlayer();
+        DataPlayer scorecheck = new DataPlayer("",0);
 
 
         for (int i=0;i<NotSort.Count;i++)
@@ -73,7 +73,6 @@ public class ScoreBoardManager : MonoBehaviour
             scorecheck = NotSort[i];
             for (int j=0;j<NotSort.Count;j++)
             {
-                Debug.Log($"{NotSort[j].uscore} and {scorecheck.uscore} is {NotSort[j].uscore > scorecheck.uscore}");
                 if (NotSort[j].uscore > scorecheck.uscore)
                 {
                     scorecheck = NotSort[j];

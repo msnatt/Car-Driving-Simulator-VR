@@ -14,28 +14,44 @@ public class CRUDToJsonManager : MonoBehaviour
     [Serializable]
     public class PlayerList
     {
+        public PlayerList(DataPlayer[] datas)
+        {
+            this.player = datas;
+        }
         public DataPlayer[] player;
     }
+    public PlayerList playerList;
 
-    public PlayerList playerList = new PlayerList();
-    public PlayerList newPlayerList = new PlayerList();
+    public PlayerList newPlayerList;
 
-
-    public void LoadDataFromFile()
+    string path ;
+    void Awake()
     {
-        Debug.Log("============ Loading... ============");
-        playerList = JsonUtility.FromJson<PlayerList>(UserDataFile.text);
-        Debug.Log("This is count form Json New Data : "+playerList.player.Length);
-        Debug.Log("======== Load Json Complete ========");
+        this.path = Application.persistentDataPath +"/UserDataFile.json";
+    }
+    public void LoadDataFromFile()
+    {   
+        if (File.Exists(this.path))
+        {
+            var jsonstring = File.ReadAllText(this.path);
+            playerList = JsonUtility.FromJson<PlayerList>(jsonstring);
+        }
+        else
+        {
+            playerList = new PlayerList(
+                new DataPlayer[1]{new DataPlayer("Nattawat",5943)}
+            );
+        }
+
     }
     public void SaveToJson(string unametext, int uscoretext)
     {
-        DataPlayer newPlayer = new DataPlayer { uname=unametext, uscore=uscoretext};
+        DataPlayer newPlayer = new DataPlayer(unametext, uscoretext);
         newPlayerList.player = new DataPlayer[playerList.player.Length + 1];
         Array.Copy(playerList.player, newPlayerList.player, playerList.player.Length);
         newPlayerList.player[newPlayerList.player.Length - 1] = newPlayer;
 
         string stringtext = JsonUtility.ToJson(newPlayerList);
-        File.WriteAllText(Application.dataPath+"/My Script/UserDataFile.json", stringtext);
+        File.WriteAllText(this.path, stringtext);
     }
 }

@@ -8,7 +8,13 @@ public class CheckCompleted : Singleton<CheckCompleted>
     [HideInInspector] public bool checkdetectB;
     [HideInInspector] public bool iscompleted;
     [HideInInspector] public bool GOUIcanActive;
+    Timer timer;
+    [SerializeField] public float timerindestination;
 
+    void Start()
+    {
+        timer = FindObjectOfType<Timer>();
+    }
 
     void Update()
     {
@@ -26,6 +32,7 @@ public class CheckCompleted : Singleton<CheckCompleted>
         {
             Debug.Log("Winner!!!!!!");
             GOUIcanActive = true;
+            timerindestination = timer.countTime;
         }
         else
         {

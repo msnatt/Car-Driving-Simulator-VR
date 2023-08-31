@@ -23125,6 +23125,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2279594305784313895, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279594305784313895, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279594305784313895, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279594305784313895, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279594305784313895, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2279594305784313895, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2777592207333119000, guid: 86be0a81cbae6c149bd9311e64f2fa71,
         type: 3}
       propertyPath: m_Mesh
@@ -23159,6 +23189,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_VersionIndex
       value: 17411
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746756035256157441, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746756035256157441, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746756035256157441, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746756035256157441, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746756035256157441, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5746756035256157441, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5903714999686385011, guid: 86be0a81cbae6c149bd9311e64f2fa71,
         type: 3}
@@ -35725,6 +35785,11 @@ PrefabInstance:
       objectReference: {fileID: 736395153}
     - target: {fileID: 5389190932616225536, guid: 59b8c5b1f4ff9d646b257cffbc2db0a7,
         type: 3}
+      propertyPath: NextButtons
+      value: 
+      objectReference: {fileID: 1574223343}
+    - target: {fileID: 5389190932616225536, guid: 59b8c5b1f4ff9d646b257cffbc2db0a7,
+        type: 3}
       propertyPath: CheckpointUI
       value: 
       objectReference: {fileID: 736395151}
@@ -47529,6 +47594,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e77c4602354e0354baffa6967d57b0d2,
     type: 3}
   m_PrefabInstance: {fileID: 1571743146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1574223343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5903714999610582731, guid: 86be0a81cbae6c149bd9311e64f2fa71,
+    type: 3}
+  m_PrefabInstance: {fileID: 736395146}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1575625919 stripped
 Transform:

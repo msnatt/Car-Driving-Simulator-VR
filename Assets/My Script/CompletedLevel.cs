@@ -8,16 +8,17 @@ public class CompletedLevel : MonoBehaviour
 {
     public float currentlevel;
     ScoreManager scoremanager;
+    Timer timer;
     void Start()
     {
         scoremanager = FindObjectOfType<ScoreManager>();
         currentlevel = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log("Start GetActiveScene");
+        timer = FindObjectOfType<Timer>();
     }
     
     public void nextlevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex <= 5)
+        if (SceneManager.GetActiveScene().buildIndex <= 5 )
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

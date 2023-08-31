@@ -23,9 +23,5 @@ public class ScoreManager : MonoBehaviour
     {
         return Score.totalscore-oldscore;
     }
-    void Update()
-    {
-        Debug.Log("Now : "+Score.totalscore);
-    }
 }
 
